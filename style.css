@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: rgb(0, 97, 89);
+  background-image: url('bg-img.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: rgb(0, 97, 89);
+  margin-bottom: auto;
+}
+
+.player-active {
+  background-color: rgb(253, 250, 255);
+}
+.player-active .name {
+  font-weight: 700;
+}
+.player-active .score {
+  font-weight: 400;
+}
+
+.player-active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: rgb(0, 97, 89);
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 97, 89);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  background-color: rgb(253, 252, 253);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn-new {
+  top: 4rem;
+}
+.btn-roll {
+  top: 39.3rem;
+}
+.btn-hold {
+  top: 46.1rem;
+}
+.btn-rule{
+  top:72rem ;
+  left: 122rem;
+  background-color: rgb(156, 25, 25);;
+  color:rgb(255, 255, 255) ;
+}
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 11rem;
+  width: 12rem;
+}
+
+.player-winner {
+  background-color: #20f11996;
+}
+
+.player-winner .name {
+  font-weight: 700;
+  color: #ffffff;
+}
+.player-winner .score{
+  color: rgb(255, 255, 255);
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.hidden{
+  display: none;
+}
+/*For mobile view */
+@media screen and (max-width: 480px){
+body{
+  background-image: url('bg-phone.jpeg');
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255);
+  display: table;
+}
+main{
+  max-width: 340px;
+  flex-direction:column;
+  background-color:transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  left: 3.5rem;
+  
+}
+.player{
+ min-width: 320px;
+ max-height: 230px;
+ padding: 1.5rem;
+ margin-top: 6rem ;
+ margin-bottom: 4rem;
+ border-radius: 2rem;
+}
+.current-label{
+  color: rgb(0, 97, 89);
+}
+.player-active {
+  color: rgb(0, 97, 89);
+}
+.player-active .score{
+  color: rgb(0, 97, 89);
+}
+.player-active .current{
+  background-color: rgb(0, 97, 89);
+  color: #fff;
+}
+.player-active .current-label{
+  color: #fff;
+}
+.player-active .current-score{
+  color: #fff;
+}
+
+.name{
+  font-size: 3rem;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  margin-bottom: 0;
+}
+.score{
+  font-size: 4rem;
+  color: #fff;
+}
+.current{
+  width: 75%;
+  max-height: 9rem;
+  padding: 1.5rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 97, 89);
+}
+.current-score{
+  font-size: 2.5rem;
+  color: rgb(0, 97, 89);
+}
+.dice{
+  height: 8rem;
+  width: 8rem;
+  top: 28rem;
+}
+.btn-roll {
+  top: 29rem;
+  left: 5rem;
+  font-size: 1.3rem;
+  max-width: 100px;
+}
+.btn-hold {
+  top: 29rem;
+  left: 29rem;
+  font-size: 1.3rem;
+  max-width: 100px;
+}
+
+.btn{
+  background-color:transparent ;
+  color: rgb(255, 255, 255);
+  backdrop-filter: none;
+  box-shadow: none;
+}
+.btn-new{
+  top: 0.2rem;
+}
+.btn-rule{
+  top:61rem ;
+  left: 21rem;
+  background-color: rgb(156, 25, 25);
+  color:rgb(245, 245, 245) ;
+  margin-bottom: 0;
+}
+
+.player-winner {
+  background-color: #20f11996;
+}
+.player-winner .score{
+   font-size: 3rem;
+}
+}
